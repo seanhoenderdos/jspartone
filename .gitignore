@@ -1,0 +1,14 @@
+# Dependencies and local cache
+node_modules/
+.npm-cache/
+
+# Share project settings, but ignore other local editor files
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
