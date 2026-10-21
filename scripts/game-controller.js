@@ -25,10 +25,14 @@ function game() {
     return;
   }
 
+  const computerSelection = computerPlay();
+  const roundResult = playRound(playerSelection, computerSelection);
+
   console.log(`Player chose ${playerSelection}.`);
+  console.log(`Computer chose ${computerSelection}.`);
+  console.log(`Round result: ${roundResult}.`);
 
   // TODO: Loop until the player or computer has won three rounds.
-  // TODO: Get the computer's choice and call playRound() with both choices.
   // TODO: Update the correct score; draws award no points.
   // TODO: Show each round's result and scores with alert() and console.log().
   // TODO: Announce the final winner with alert() and console.log().
