@@ -17,9 +17,17 @@ function game() {
   console.log(rules);
   console.log(`Player: ${playerScore} | Computer: ${computerScore}`);
 
-  // Handover: getPlayerChoice() must be implemented before we can collect input.
+  const playerSelection = getPlayerChoice();
+
+  if (playerSelection === null) {
+    alert("Game cancelled.");
+    console.log("Game cancelled.");
+    return;
+  }
+
+  console.log(`Player chose ${playerSelection}.`);
+
   // TODO: Loop until the player or computer has won three rounds.
-  // TODO: Get the player's choice and stop safely if it is null.
   // TODO: Get the computer's choice and call playRound() with both choices.
   // TODO: Update the correct score; draws award no points.
   // TODO: Show each round's result and scores with alert() and console.log().
