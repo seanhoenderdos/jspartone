@@ -28,15 +28,30 @@ function game() {
   const computerSelection = computerPlay();
   const roundResult = playRound(playerSelection, computerSelection);
 
-  console.log(`Player chose ${playerSelection}.`);
-  console.log(`Computer chose ${computerSelection}.`);
-  console.log(`Round result: ${roundResult}.`);
+  let roundMessage;
+
+  if (roundResult === "player") {
+    playerScore += 1;
+    roundMessage = "You win this round!";
+  } else if (roundResult === "computer") {
+    computerScore += 1;
+    roundMessage = "The computer wins this round!";
+  } else {
+    roundMessage = "It's a draw. No points awarded.";
+  }
+
+  const roundSummary =
+    `You chose ${playerSelection}.\n` +
+    `Computer chose ${computerSelection}.\n\n` +
+    `${roundMessage}\n` +
+    `Player: ${playerScore} | Computer: ${computerScore}`;
+
+  alert(roundSummary);
+  console.log(roundSummary);
 
   // TODO: Loop until the player or computer has won three rounds.
-  // TODO: Update the correct score; draws award no points.
-  // TODO: Show each round's result and scores with alert() and console.log().
   // TODO: Announce the final winner with alert() and console.log().
 }
 
-// During development, run game() in the browser console to check the match setup.
+// During development, run game() in the browser console to test one round.
 // TODO: Start game() on page load once the remaining functions are integrated.
