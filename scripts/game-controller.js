@@ -51,7 +51,20 @@ function game() {
     console.log(roundSummary);
   }
 
-  // TODO: Announce the final winner with alert() and console.log().
+  let winnerMessage;
+
+  if (playerScore === winningScore) {
+    winnerMessage = "You win the match!";
+  } else {
+    winnerMessage = "The computer wins the match!";
+  }
+
+  const finalSummary =
+    `${winnerMessage}\n\n` +
+    `Final score: Player ${playerScore} | Computer ${computerScore}`;
+
+  alert(finalSummary);
+  console.log(finalSummary);
 }
 
 // During development, run game() in the browser console to test a match.
