@@ -17,41 +17,42 @@ function game() {
   console.log(rules);
   console.log(`Player: ${playerScore} | Computer: ${computerScore}`);
 
-  const playerSelection = getPlayerChoice();
+  while (playerScore < winningScore && computerScore < winningScore) {
+    const playerSelection = getPlayerChoice();
 
-  if (playerSelection === null) {
-    alert("Game cancelled.");
-    console.log("Game cancelled.");
-    return;
+    if (playerSelection === null) {
+      alert("Game cancelled.");
+      console.log("Game cancelled.");
+      return;
+    }
+
+    const computerSelection = computerPlay();
+    const roundResult = playRound(playerSelection, computerSelection);
+
+    let roundMessage;
+
+    if (roundResult === "player") {
+      playerScore += 1;
+      roundMessage = "You win this round!";
+    } else if (roundResult === "computer") {
+      computerScore += 1;
+      roundMessage = "The computer wins this round!";
+    } else {
+      roundMessage = "It's a draw. No points awarded.";
+    }
+
+    const roundSummary =
+      `You chose ${playerSelection}.\n` +
+      `Computer chose ${computerSelection}.\n\n` +
+      `${roundMessage}\n` +
+      `Player: ${playerScore} | Computer: ${computerScore}`;
+
+    alert(roundSummary);
+    console.log(roundSummary);
   }
 
-  const computerSelection = computerPlay();
-  const roundResult = playRound(playerSelection, computerSelection);
-
-  let roundMessage;
-
-  if (roundResult === "player") {
-    playerScore += 1;
-    roundMessage = "You win this round!";
-  } else if (roundResult === "computer") {
-    computerScore += 1;
-    roundMessage = "The computer wins this round!";
-  } else {
-    roundMessage = "It's a draw. No points awarded.";
-  }
-
-  const roundSummary =
-    `You chose ${playerSelection}.\n` +
-    `Computer chose ${computerSelection}.\n\n` +
-    `${roundMessage}\n` +
-    `Player: ${playerScore} | Computer: ${computerScore}`;
-
-  alert(roundSummary);
-  console.log(roundSummary);
-
-  // TODO: Loop until the player or computer has won three rounds.
   // TODO: Announce the final winner with alert() and console.log().
 }
 
-// During development, run game() in the browser console to test one round.
+// During development, run game() in the browser console to test a match.
 // TODO: Start game() on page load once the remaining functions are integrated.
