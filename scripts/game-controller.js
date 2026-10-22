@@ -1,5 +1,3 @@
-/* exported game */
-
 function game() {
   let playerScore = 0;
   let computerScore = 0;
@@ -67,5 +65,4 @@ function game() {
   console.log(finalSummary);
 }
 
-// During development, run game() in the browser console to test a match.
-// TODO: Start game() on page load once the remaining functions are integrated.
+game();
