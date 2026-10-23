@@ -9,7 +9,11 @@ function computerPlay() {
 
 function getPlayerChoice() {
   while (true) {
-    const choice = prompt("Choose Rock, Paper, or Scissors:");
+    const choice = prompt(
+      "Choose your move:\n\n" +
+        "🪨 Rock\n📄 Paper\n✂️ Scissors\n\n" +
+        "Type Rock, Paper or Scissors:",
+    );
 
     if (choice === null) {
       return null;
@@ -21,6 +25,8 @@ function getPlayerChoice() {
     if (answer === "paper") return "Paper";
     if (answer === "scissors") return "Scissors";
 
-    alert("Invalid choice. Please try again.");
+    alert(
+      "⚠️ Invalid choice.\n\nPlease type Rock, Paper or Scissors and try again.",
+    );
   }
 }
