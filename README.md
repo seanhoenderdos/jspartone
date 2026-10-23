@@ -1,2 +1,2 @@
 ﻿Javascript Assignment Part One:
-{URL incoming}
+https://seanhoenderdos.github.io/jspartone/
