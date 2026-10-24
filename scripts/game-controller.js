@@ -11,8 +11,6 @@ function game() {
     "👋 Welcome to Rock Paper Scissors!\n\n" +
       "🪨 Rock | 📄 Paper | ✂️ Scissors\n\n" +
       `${rules}\n\n` +
-      "Everything you need appears in these dialogs.\n" +
-      "You do not need to open the browser console.\n\n" +
       "When prompted, enter Rock, Paper or Scissors.\n" +
       "Press Cancel in the choice prompt to stop playing.",
   );
